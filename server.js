@@ -11,11 +11,19 @@ app.use(express.json());
 
 
 //Importing scripts from routes
-const Contact_req = require('./routes/contact_requests');
+const Contact_request = require('./routes/contact_requests');
+const user =  require('./routes/users');
+const auth = require('./routes/auth');
+const review = require('./routes/reviews');
+const tutoring_class = require('./routes/tutoring-classes');
 
 
 //Define roots for all routes
-app.use('/contact-requests', Contact_req);
+app.use('/contact-requests', Contact_request);
+app.use('/users', user);
+app.use('/auth', auth);
+app.use('/reviews', review);
+app.use('/tutoring-classes', tutoring_class);
 
 
 //Syncing database and start listening to PORT

@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     const Contact_request = sequelize.define("Contact_requests", {
         name: {
             type: DataTypes.STRING(50),
-            allowNULL: false,
+            allowNull: false,
             unique: true,
             validate: {
                 notEmpty: true,
@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: {
             type: DataTypes.STRING(50),
-            allowNULL: false,
+            allowNull: false,
             unique: true,
+            notEmpty: true,
             validate: {
                 notEmpty: true,
                 isEmail: true
@@ -20,17 +21,17 @@ module.exports = (sequelize, DataTypes) => {
         },
         message: {
             type: DataTypes.STRING(5000),
-            allowNULL: false,
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         is_resolved: {
             type: DataTypes.BOOLEAN,
+            allowNull: false,
             defaultValue: false,
-            allowNULL: false,
             validate: {
-                notEmpty: false
+                notEmpty: true
             }
         }
     });

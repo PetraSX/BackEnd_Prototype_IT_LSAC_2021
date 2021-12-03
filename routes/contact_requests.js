@@ -32,7 +32,6 @@ router.post('', async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             message: req.body.message,
-            is_resolved: req.body.is_resolved
         });
         await item.validate();
         // validation passed
