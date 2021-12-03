@@ -1,3 +1,4 @@
+'use strict'
 module.exports = (sequelize, DataTypes) => {
     const Contact_request = sequelize.define("Contact_requests", {
         name: {
