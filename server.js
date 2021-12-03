@@ -17,14 +17,12 @@ const auth = require('./routes/auth');
 const review = require('./routes/reviews');
 const tutoring_class = require('./routes/tutoring-classes');
 
-
 //Define roots for all routes
 app.use('/contact-requests', Contact_request);
 app.use('/users', user);
 app.use('/auth', auth);
 app.use('/reviews', review);
 app.use('/tutoring-classes', tutoring_class);
-
 
 //Syncing database and start listening to PORT
 db.sequelize.sync().then(() => {

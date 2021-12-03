@@ -1,7 +1,14 @@
-'use strict'
 module.exports = (sequelize, DataTypes) => {
-    const Contact_request = sequelize.define("Contact_requests", {
-        name: {
+    const User = sequelize.define("Users", {
+        lastname: {
+            type: DataTypes.STRING(50),
+            allowNull: false,
+            unique: true,
+            validate: {
+                notEmpty: true,
+            }
+        },
+        firstname: {
             type: DataTypes.STRING(50),
             allowNull: false,
             unique: true,
@@ -18,21 +25,22 @@ module.exports = (sequelize, DataTypes) => {
                 isEmail: true
             }
         },
-        message: {
-            type: DataTypes.STRING(5000),
+        password: {
+            type: DataTypes.STRING(50),
             allowNull: false,
+            unique: true,
             validate: {
-                notEmpty: true
+                notEmpty: true,
             }
         },
-        is_resolved: {
-            type: DataTypes.BOOLEAN,
+        role: {
+            type: DataTypes.STRING(50),
             allowNull: false,
-            defaultValue: false,
             validate: {
-                notEmpty: true
+                notEmpty: true,
+                isIn: ['teacher', 'student']
             }
         }
     });
-    return Contact_request;
-};
+    return User;
+}
