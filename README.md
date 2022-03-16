@@ -1,4 +1,4 @@
-# PROBA_IT_LSAC_2021
+# BackEND prototype LSAC_IT_2021
 A fost un challange dificil care m-a invatat tehnologii noi, dar mi-a si aratat ce se afla de fapt sub orice site web.
 
 Backend-ul mi-a atras cel mai tare atentia prin tehnologiile folosite(JS, NODEjs, SQL, Express), iar de asta am ales sa-l realizez.
